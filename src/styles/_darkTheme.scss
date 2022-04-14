@@ -1,0 +1,49 @@
+@import "_colors";
+
+.dark{
+    .app {
+        #introduction__panel{
+            background-color: $bg-dark-gray;
+            color: $white;
+            svg{
+                fill: $yellow;
+            }
+        }
+        
+        #form__panel{
+            background-color: $bg-black;
+            color: $white;
+            .divider{
+                background-color: $yellow;
+            }
+        }
+
+    .input__box{
+        input{
+            background-color: transparent;
+            color: $white;
+        &:focus{
+            border-color: $yellow;
+            // color: $white;
+       }
+    }
+}
+
+.input__error{
+    color: $red;
+}
+
+#submit__button{
+    background-color: $yellow;
+    color: $white;
+}
+
+.required__input{
+    color: $red;
+}
+
+.checkbox__label{
+    color: $gray;
+}
+    }
+}

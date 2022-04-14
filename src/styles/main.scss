@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+@import "_colors";
+@import "_darkTheme";
+@import "_lightTheme";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+    height: 100vh;
+    width: 100vw;
+}
+
+.flex{
+    display: flex;
+    .col{
+        flex-direction: column;
+    }
+}
+
+.app {
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    #theme__changer{
+        position: absolute;
+        right: 15px;
+        top: 0;
+        padding: 1rem;
+        z-index: 1;
+        &:hover{
+           svg{
+               fill: $yellow;
+           }
+        }
+    }
+
+    #introduction__panel{
+        flex: 45%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: 3rem;
+        justify-content: space-evenly;
+        position: relative;
+        overflow: clip;
+        h2{
+            text-transform: uppercase;
+            font-size: 3rem;
+        }
+        p{
+            font-weight: 400;
+            font-size: 1.4rem;
+        }
+    }
+
+    #form__panel{
+        flex: 50%;
+        position: relative;
+        padding: 3rem 10rem 3rem 10rem;
+        position: relative;
+        overflow: scroll;
+        overflow-x: hidden;
+        #title{
+            font-size: 47px;
+            line-height: 59px;
+        }
+        .divider{
+            width: 8rem;
+            height: 4px;
+            margin-top: 0.5rem;
+        }
+        #double__input{
+            gap: 20px;
+            justify-content: space-between;
+        }
+    }
+
+    .input__box{
+        margin-top: 1rem;
+        width: 100%;
+        input{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #A0A0A0;
+            border-radius: 3px;
+            outline: none;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 20px;
+
+           &:focus{
+                border: 2px solid  ;
+           }
+        }
+        .input__text{
+            font-size: 20px;
+            line-height: 25px;
+            letter-spacing: 0.15px;
+        }
+    
+    }
+    .input__error{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.15px;
+    }
+    #submit__button{
+        width: 100%;
+        height: 3.5rem;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+        cursor: pointer;
+        span{
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+            &::after{
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+        }
+        &:hover{
+            span{
+                padding-right: 25px;
+                &::after{
+                    opacity: 1;
+                    right: 0;
+                }
+            }
+        }
+        &:active{
+            span{
+                opacity: .2;
+            }
+        }
+        &:disabled{
+            opacity: 0.3;
+        }
+    }
+    .required__input{
+        margin-left: 0.5rem;
+    }
+    .checkbox__label{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.1px;
+        input{
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        span{
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    }
+    .bands{
+        svg{
+            align-self: flex-end;
+        }
+    }
+}

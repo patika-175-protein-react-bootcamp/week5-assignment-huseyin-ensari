@@ -1,0 +1,47 @@
+@import "_colors";
+
+.light{
+    .app {
+        #introduction__panel{
+            background-color: $bg-gray;
+            color: $blue;
+            svg{
+                fill: $blue;
+            }
+        }
+        
+        #form__panel{
+            .divider{
+                background-color: $blue;
+            }
+        }
+
+    .input__box{
+        input{
+
+        &:focus{
+            border-color: $blue;
+       }
+    }
+}
+
+.input__error{
+    color: $red;
+}
+
+#submit__button{
+    background-color: $blue;
+    color: $white;
+}
+
+.required__input{
+    color: $red;
+}
+
+.checkbox__label{
+    color: $gray;
+}
+
+
+    }
+}
