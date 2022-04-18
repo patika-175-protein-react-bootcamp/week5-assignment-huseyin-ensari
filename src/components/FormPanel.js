@@ -49,12 +49,14 @@ const FormPanel = () => {
                         name="name"
                         onChange={formik.handleChange}
                         value={formik.values.name}
+                        touched={formik.touched.name}
                     />
                     <InputBox text="SOYİSİM" placeholder="Soyismini gir"
                         error={formik.errors.lastname}
                         name="lastname"
                         onChange={formik.handleChange}
                         value={formik.values.lastname}
+                        touched={formik.touched.lastname}
                     />
                 </div>
                 <InputBox text="E-POSTA" placeholder="E-posta adresini gir" isRequired
@@ -63,12 +65,14 @@ const FormPanel = () => {
                     onChange={formik.handleChange}
                     value={formik.values.email}
                     type="email"
+                    touched={formik.touched.email}
                 />
                 <InputBox text="KULLANICI ADI" placeholder="Kullanıcı adını gir" isRequired
                     error={formik.errors.username}
                     name="username"
                     onChange={formik.handleChange}
                     value={formik.values.username}
+                    touched={formik.touched.username}
                 />
                 <InputBox text="ŞİFRE" placeholder="Şifreni gir" isRequired
                     error={formik.errors.password}
@@ -76,6 +80,7 @@ const FormPanel = () => {
                     type="password"
                     onChange={formik.handleChange}
                     value={formik.values.password}
+                    touched={formik.touched.password}
                 />
                 <InputBox text="ŞİFRENİ TEKRAR GİR" placeholder="Şifreni doğrula" isRequired
                     error={formik.errors.rePassword}
@@ -83,6 +88,7 @@ const FormPanel = () => {
                     type="password"
                     onChange={formik.handleChange}
                     value={formik.values.rePassword}
+                    touched={formik.touched.rePassword}
                 />
                 <label className="checkbox__label">
                     <input
@@ -91,7 +97,11 @@ const FormPanel = () => {
                         id="contract"
                         checked={formik.values.contract}
                         onChange={formik.handleChange} />Sözleşmeyi kabul ediyorum.
-                    <span className='input__error'>{formik.errors.contract}</span>
+                    {
+                        formik.touched.contract && formik.errors.contract && (
+                            <span className='input__error'>{formik.errors.contract}</span>
+                        )
+                    }
 
                 </label>
                 <button id='submit__button' type='submit' disabled={loading}><span>Kayıt Ol </span></button>

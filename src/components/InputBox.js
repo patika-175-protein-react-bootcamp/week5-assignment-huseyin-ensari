@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputBox = ({ text, type, placeholder, name, isRequired, onChange, value, error }) => {
+const InputBox = ({ text, type, placeholder, name, isRequired, onChange, value, error, touched }) => {
 
     return (
         <div className='input__box'>
@@ -14,7 +14,11 @@ const InputBox = ({ text, type, placeholder, name, isRequired, onChange, value, 
                 onChange={onChange}
                 value={value}
                 type={type || "text"} placeholder={placeholder || ""} />
-            <span className='input__error'>{error}</span>
+            {
+                touched && error && (
+                    <span className='input__error'>{error}</span>
+                )
+            }
         </div >
     );
 };
